@@ -12,7 +12,8 @@ namespace StartupApp
     {
       StructureMap.IContainer container = new StructureMap.Container(c => c.AddRegistry<DefaultRegistry>());
 
-      AutomapperBootstrapper.InitMappings();
+      container.GetInstance <AutomapperBootstrapper>()
+      .InitMappings();
     }
   }
 }
